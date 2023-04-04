@@ -1,5 +1,11 @@
 package org.example.Modele;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data @AllArgsConstructor @NoArgsConstructor
+
 public class IB_Credit {
     private Long IB_id;
     private Double IB_capilate_Emprunte;
@@ -8,7 +14,16 @@ public class IB_Credit {
     private String IB_nom_damandeur;
     private Double IB_mensualite;
 
-    public IB_Credit(Long IB_id, Double IB_capilate_Emprunte , Integer IB_nombre_mois, Double IB_taux_Mensuel , String IB_nom_damandeur, Double IB_mensualite)
+    public IB_Credit(long id, double capital, int nbrMois, double taux, IB_Client client, double mensulite) {
+        this.IB_id = id;
+        this.IB_mensualite = mensulite;
+        this.IB_taux_Mensuel = taux;
+        this.IB_nombre_mois = nbrMois;
+        this.IB_capilate_Emprunte = capital;
+
+    }
+
+   /* public IB_Credit(Long IB_id, Double IB_capilate_Emprunte , Integer IB_nombre_mois, Double IB_taux_Mensuel , String IB_nom_damandeur, Double IB_mensualite)
     {
         this.IB_id = IB_id;
         this.IB_mensualite = IB_mensualite;
@@ -16,7 +31,7 @@ public class IB_Credit {
         this.IB_nom_damandeur = IB_nom_damandeur;
         this.IB_capilate_Emprunte = IB_capilate_Emprunte;
         this.IB_nombre_mois = IB_nombre_mois;
-    }
+    }*/
 
 
     public Long getIB_id() {
